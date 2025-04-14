@@ -13,7 +13,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   final CounterController controller = Get.put(CounterController());
-  int counter = 0;
 
   @override
   void initState() {

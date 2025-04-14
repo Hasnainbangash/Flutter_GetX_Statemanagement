@@ -7,6 +7,6 @@ class CounterController extends GetxController {
 
   incrementCounter() {
     counter.value++;
-    print(counter.value++);
+    print(counter.value);
   }
 }
