@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_statemanagement/Example2/example_two_controller.dart';
 import 'package:get/get.dart';
 
 class Example2HomeScreen extends StatefulWidget {
@@ -10,7 +11,8 @@ class Example2HomeScreen extends StatefulWidget {
 
 class _Example2HomeScreenState extends State<Example2HomeScreen> {
 
-  double opacity = .4;
+  ExampleTwoController exampleTwoController = Get.put(ExampleTwoController());
+  // double opacity = .4;
 
   @override
   void initState() {
@@ -21,17 +23,27 @@ class _Example2HomeScreenState extends State<Example2HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print('build');
     return Scaffold(
       appBar: AppBar(
         title: const Text("GetX Tutorials"),
       ),
       body: Column(
         children: [
-          Container(
-            height: 200,
-            width: 200,
-            color: Colors.red,
-          ),
+          Obx((){
+            return Container(
+              height: 200,
+              width: 200,
+              color: Colors.red.withOpacity(exampleTwoController.opacity.value),
+            );
+          }),
+
+          Obx((){
+            return Slider(value: exampleTwoController.opacity.value, onChanged: (value){
+              print(value);
+              exampleTwoController.setOpacity(value);
+            });
+          }),
         ],
       ),
     );
