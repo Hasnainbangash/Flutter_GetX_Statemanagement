@@ -29,12 +29,26 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print('rebuild');
     return Scaffold(
       appBar: AppBar(
         title: const Text("GetX Tutorials"),
       ),
-      body: Center(
-        child: Text(x.toString(), style: TextStyle(fontSize: 60),),
+      body: Column(
+        children: [
+          Center(
+            child: Text(x.toString(), style: TextStyle(fontSize: 60),),
+          ),
+          Expanded(
+              child: ListView.builder(
+                  itemCount: 10000,
+                  itemBuilder: (context, index){
+                return ListTile(
+                  title: Text(index.toString()),
+                );
+              }),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: (){
