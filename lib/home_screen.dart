@@ -30,14 +30,11 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text("GetX Tutorials"),
       ),
       body: Center(
-        child: Text(counter.toString(), style: TextStyle(fontSize: 60),),
+        child: Text(controller.counter.toString(), style: TextStyle(fontSize: 60),),
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: (){
-            counter++;
-            setState(() {
-
-            });
+            controller.counterIncrement();
           }
       ),
     );
