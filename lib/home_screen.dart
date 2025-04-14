@@ -30,11 +30,14 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text("GetX Tutorials"),
       ),
       body: Center(
-        child: Text(controller.counter.toString(), style: TextStyle(fontSize: 60),),
+        // By using the obx it creates a listener that listens to the observing objects
+        child: Obx((){
+          return Text(controller.counter.toString(), style: TextStyle(fontSize: 60),);
+        }),
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: (){
-            controller.counterIncrement();
+            controller.incrementCounter();
           }
       ),
     );

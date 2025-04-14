@@ -5,7 +5,8 @@ class CounterController extends GetxController {
   // Obs manages all the changes
   RxInt counter = 1.obs;
 
-  counterIncrement() {
+  incrementCounter() {
     counter.value++;
+    print(counter.value++);
   }
 }
