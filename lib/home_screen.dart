@@ -1,6 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:flutter_getx_statemanagement/counter_controller.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,13 +12,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
+  final CounterController controller = Get.put(CounterController());
   int counter = 0;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
 
   }
 
