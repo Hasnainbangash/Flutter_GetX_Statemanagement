@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_statemanagement/home_screen.dart';
+import 'package:flutter_getx_statemanagement/Example1/home_screen.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const HomeScreen(),
+      home: const Example1HomeScreen(),
     );
   }
 }
