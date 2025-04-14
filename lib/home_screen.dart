@@ -18,7 +18,15 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text("GetX Tutorials"),
       ),
       body: Center(
-        child: Text('0', style: TextStyle(fontSize: 60),),
+        child: Text(x.toString(), style: TextStyle(fontSize: 60),),
+      ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            x++;
+            setState(() {
+
+            });
+          }
       ),
     );
   }
