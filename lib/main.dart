@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_statemanagement/Example1/home_screen.dart';
+import 'package:flutter_getx_statemanagement/Example1/example_1_home_screen.dart';
+import 'package:flutter_getx_statemanagement/Example2/example_2_home_screen.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -17,7 +18,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Example1HomeScreen(),
+
+      // GetX Statemanagement example 1
+      // home: const Example1HomeScreen(),
+
+      // GetX Statemanagement example 2
+      home: const Example2HomeScreen(),
     );
   }
 }
