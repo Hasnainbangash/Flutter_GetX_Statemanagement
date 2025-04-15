@@ -33,12 +33,14 @@ class _Example3HomeScreenState extends State<Example3HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Notifications'),
-              Switch(value: exampleThreeController.notifications.value, onChanged: (value){
-                exampleThreeController.setNotifications(value);
-                // setState(() {
-                //
-                // });
-              }),
+              Obx((){
+                return Switch(value: exampleThreeController.notifications.value, onChanged: (value){
+                  exampleThreeController.setNotifications(value);
+                  // setState(() {
+                  //
+                  // });
+                });
+              })
             ],
           ),
         ],
