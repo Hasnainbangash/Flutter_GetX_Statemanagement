@@ -10,6 +10,8 @@ class Example3HomeScreen extends StatefulWidget {
 
 class _Example3HomeScreenState extends State<Example3HomeScreen> {
 
+  bool notifications = false;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -18,6 +20,7 @@ class _Example3HomeScreenState extends State<Example3HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print('build');
     return Scaffold(
       appBar: AppBar(
         title: Text('GetX Tutorials'),
@@ -25,8 +28,15 @@ class _Example3HomeScreenState extends State<Example3HomeScreen> {
       body: Column(
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              Text('Notifications'),
+              Switch(value: notifications, onChanged: (value){
+                notifications = value;
+                setState(() {
 
+                });
+              }),
             ],
           ),
         ],
