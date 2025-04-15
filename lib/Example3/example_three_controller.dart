@@ -7,6 +7,7 @@ class ExampleThreeController extends GetxController {
 
   setNotifications(bool value) {
     notifications.value = value;
+    print(notifications.value);
   }
 
 }
