@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_statemanagement/Example3/example_three_controller.dart';
 import 'package:get/get.dart';
 
 class Example3HomeScreen extends StatefulWidget {
@@ -10,7 +11,8 @@ class Example3HomeScreen extends StatefulWidget {
 
 class _Example3HomeScreenState extends State<Example3HomeScreen> {
 
-  bool notifications = false;
+  ExampleThreeController exampleThreeController = Get.put(ExampleThreeController());
+  // bool notifications = false;
 
   @override
   void initState() {
@@ -31,11 +33,11 @@ class _Example3HomeScreenState extends State<Example3HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Notifications'),
-              Switch(value: notifications, onChanged: (value){
-                notifications = value;
-                setState(() {
-
-                });
+              Switch(value: exampleThreeController.notifications.value, onChanged: (value){
+                exampleThreeController.setNotifications(value);
+                // setState(() {
+                //
+                // });
               }),
             ],
           ),
